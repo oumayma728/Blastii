@@ -1,0 +1,59 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px; /* Adds space between the image and text */
+  }
+  
+  .image-container {
+    flex-shrink: 0;
+  }
+  
+  .bus-image {
+    max-width: 1000px; /* Adjust size of the bus image */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-right : 200px;
+  }
+  
+  .text-container {
+    text-align: left;
+  }
+  
+  .logo-image {
+    width: 200px; /* Increase size of the logo */
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 3rem; /* Make h1 larger */
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333; /* Adjust color if needed */
+  }
+  
+  .subtitle {
+    font-size: 1.5rem; /* Adjust size for the paragraph */
+    color: #555; /* Subtle color for the subtitle */
+    margin: 10px 0;
+    line-height: 1.8; /* Add spacing between lines */
+    text-align: justify; /* Justify the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add a subtle text shadow */
+    padding: 10px 0;
+    border-left: 4px solid #007bff; /* Add a decorative border on the left */
+    padding-left: 15px; /* Space between border and text */
+    background-color: #f0f8ff; /* Light background color to highlight the text */
+    border-radius: 5px; /* Smoothen the corners of the paragraph */
+  }
+  
