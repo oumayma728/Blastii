@@ -21,7 +21,29 @@ app.use('/api/bookings', bookingRoutes); // Base URL for booking routes
 app.use('/api/buses', busRoutes); // Base URL for bus routes
 app.use('/api/users', userRoutes); // Base URL for user routes
 
-// Create booking with payment
+
+app.get('/search_bus', async (req, res) => {
+  const { depart, arrive } = req.query;
+
+  try {
+    // Validate input
+    if (!depart || !arrive) {
+      return res.status(400).json({ message: 'Departure and destination locations are required.' });
+    }
+
+    // Find buses with matching departure and arrival
+    const results = await Bus.find({ depart, arrive });
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'No buses found for the specified route.' });
+    }
+
+    res.json({ results });
+  } catch (error) {
+    console.error('Error fetching available buses:', error);
+    res.status(500).json({ message: 'Server error', error });
+  }
+});
 app.post('/createBookingWithPayment', async (req, res) => {
   try {
     const { userId, busNumber, seatNumber, totalPrice, paymentMethod, cardNumber, cardCode } = req.body;
